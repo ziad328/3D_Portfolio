@@ -52,13 +52,11 @@ body {
 }
 
 @utility text-gray_gradient {
-  background-image: linear-gradient(
-    to right,
-    #BEC1CF 0%,
-    #BEC1CF 60%,
-    #D5D8EA 60%,
-    #D5D8EA 100%
-  );
+  background-image: linear-gradient(to right,
+      #BEC1CF 0%,
+      #BEC1CF 60%,
+      #D5D8EA 60%,
+      #D5D8EA 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -92,7 +90,7 @@ body {
 }
 
 @utility grid-subtext {
-  @apply text-[#afb0b6] text-base font-generalsans;
+  @apply text-white-600 text-base font-generalsans;
 }
 
 @utility copy-container {
@@ -101,7 +99,12 @@ body {
 
 /* Projects */
 @utility arrow-btn {
-  @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient;
+  @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full;
+  background-image: linear-gradient(to right,
+      rgba(255, 255, 255, 0.1) 10%,
+      rgba(255, 255, 255, 0.000025) 50%,
+      rgba(255, 255, 255, 0.000025) 50%,
+      rgba(255, 255, 255, 0.025) 100%);
 }
 
 @utility tech-logo {
@@ -182,24 +185,39 @@ body {
   display: inline-block;
 }
 
-.arrow-gradient {
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.1) 10%,
-    rgba(255, 255, 255, 0.000025) 50%,
-    rgba(255, 255, 255, 0.000025) 50%,
-    rgba(255, 255, 255, 0.025) 100%
-  );
-}
+
 
 /* ─── Keyframes ───────────────────────────────────────────────────────────── */
 @keyframes wave-animation {
-  0%   { transform: rotate(0deg); }
-  15%  { transform: rotate(14deg); }
-  30%  { transform: rotate(-8deg); }
-  40%  { transform: rotate(14deg); }
-  50%  { transform: rotate(-4deg); }
-  60%  { transform: rotate(10deg); }
-  70%  { transform: rotate(0deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  15% {
+    transform: rotate(14deg);
+  }
+
+  30% {
+    transform: rotate(-8deg);
+  }
+
+  40% {
+    transform: rotate(14deg);
+  }
+
+  50% {
+    transform: rotate(-4deg);
+  }
+
+  60% {
+    transform: rotate(10deg);
+  }
+
+  70% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
