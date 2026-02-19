@@ -1,16 +1,11 @@
-import { Leva } from 'leva';
-import { Suspense } from 'react';
+import { Suspense, lazy } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useMediaQuery } from 'react-responsive';
-import { PerspectiveCamera } from '@react-three/drei';
-
-import ReactLogo from '../components/ReactLogo.tsx';
 import Button from '../components/Button.tsx';
 import CanvasLoader from '../components/CanvasLoader.tsx';
 import { calculateSizes } from '../constants/index.ts';
-import HackerRoom from '../components/HackerRoom.tsx';
-import HeroCamera from '../components/HeroCamera.tsx';
-import ThreeLogo from '../components/ThreeLogo.tsx';
+
+const HeroCanvas = lazy(() => import('../components/HeroCanvas.tsx'));
 
 const Hero = () => {
     // Use media queries to determine screen size
@@ -30,28 +25,16 @@ const Hero = () => {
             </div>
 
             <div className="w-full h-full absolute inset-0">
-                <Canvas className="w-full h-full">
-                    <Suspense fallback={<CanvasLoader />}>
-                        {/* To hide controller */}
-                        <Leva hidden />
-                        <PerspectiveCamera makeDefault position={[0, 0, 30]} />
-
-                        <HeroCamera isMobile={isMobile}>
-                            <HackerRoom scale={sizes.deskScale} position={sizes.deskPosition} rotation={[0.1, -Math.PI, 0]} />
-                        </HeroCamera>
-
-                        <group>
-                            <ThreeLogo position={sizes.threeLogoPosition} scale={sizes.threeLogoScale} />
-                            <ReactLogo position={sizes.reactLogoPosition} scale={sizes.reactLogoScale} />
-                        </group>
-
-                        <ambientLight intensity={1} />
-                        <directionalLight position={[10, 10, 10]} intensity={0.5} />
-                    </Suspense>
-                </Canvas>
+                <Suspense
+                    fallback={
+                        <Canvas className="w-full h-full">
+                            <CanvasLoader />
+                        </Canvas>
+                    }
+                >
+                    <HeroCanvas sizes={sizes} isMobile={isMobile} />
+                </Suspense>
             </div>
-
-
 
             <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
                 <a href="#about" className="w-fit">

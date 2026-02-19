@@ -250,10 +250,10 @@ export const calculateSizes = (isSmall: boolean, isMobile: boolean, isTablet: bo
     return {
         deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
         deskPosition: (isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0]) as [number, number, number],
-        reactLogoPosition: (isSmall ? [3, 4, 0] : isMobile ? [5, 4, 0] : isTablet ? [7, 2, 0] : [10, 2, 0]) as [number, number, number],
-        threeLogoPosition: (isSmall ? [-3, 4, 0] : isMobile ? [-5, 4, 0] : isTablet ? [-7, 2, 0] : [-10, 2, 0]) as [number, number, number],
-        threeLogoScale: (isSmall ? 0.015 : isMobile ? 0.02 : 0.02) as number,
-        reactLogoScale: (isSmall ? 0.3 : isMobile ? 0.5 : 0.5) as number,
+        reactLogoPosition: (isSmall ? [3, 4, 0] : isMobile ? [3, 4, 0] : isTablet ? [7, 2, 0] : [10, 2, 0]) as [number, number, number],
+        threeLogoPosition: (isSmall ? [-3, 4, 0] : isMobile ? [-3, 4, 0] : isTablet ? [-7, 2, 0] : [-10, 2, 0]) as [number, number, number],
+        threeLogoScale: (isSmall ? 0.015 : isMobile ? 0.015 : 0.02) as number,
+        reactLogoScale: (isSmall ? 0.3 : isMobile ? 0.3 : 0.5) as number,
     };
 };
 
