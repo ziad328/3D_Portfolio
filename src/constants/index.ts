@@ -58,19 +58,18 @@ export const clientReviews = [
 
 export const myProjects = [
     {
-        title: 'Podcastr - AI Podcast Platform',
-        desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
-        subdesc:
-            'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.',
-        href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
+        title: 'StreamFlow - Music Library App',
+        desc: 'StreamFlow is a custom-built audio library platform that transforms how your music is managed. With tailored user features like secure track-uploading and editing functionality, it allows listeners to curate diverse personal playlists from a single dashboard.',
+        subdesc: 'Built as a dynamic full-stack music streaming app with React.js, Vite, Tailwind CSS, Formik, Node.js and MongoDB, StreamFlow is designed for optimal performance and scalability.',
+        href: 'https://stream-flow-ui.vercel.app/',
         texture: '/textures/project/project1.mp4',
         logo: '/assets/project-logo1.png',
         logoStyle: {
-            backgroundColor: '#2A1816',
-            border: '0.2px solid #36201D',
-            boxShadow: '0px 0px 60px 0px #AA3C304D',
+            backgroundColor: '#1A0B2E',
+            border: '0.2px solid #3B1A6B',
+            boxShadow: '0px 0px 60px 0px #6B21A84D',
         },
-        spotlight: '/assets/spotlight1.png',
+        spotlight: '/assets/spotlight5.png',
         tags: [
             {
                 id: 1,
@@ -79,29 +78,28 @@ export const myProjects = [
             },
             {
                 id: 2,
-                name: 'TailwindCSS',
-                path: 'assets/tailwindcss.png',
+                name: 'Vite',
+                path: '/vite.svg',
             },
             {
                 id: 3,
-                name: 'TypeScript',
-                path: '/assets/typescript.png',
+                name: 'JavaScript',
+                path: '/assets/JavaScript.png',
             },
             {
                 id: 4,
-                name: 'Framer Motion',
-                path: '/assets/framer.png',
+                name: 'TailwindCSS',
+                path: '/assets/tailwindcss.png',
             },
         ],
     },
     {
-        title: 'LiveDoc - Real-Time Google Docs Clone',
-        desc: 'LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.',
-        subdesc:
-            'With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.',
-        href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
+        title: 'Ding - Advanced Social Media Platform',
+        desc: 'Ding is a powerful social networking app that elevates the capabilities of modern community building. As an enhanced version of Facebook, it connects millions of active users simultaneously, ensuring that every interaction is captured instantly and securely.',
+        subdesc: 'With Ding, users can experience the future of AI companionship, where they bond with Noro in a responsive 3D environment without any lag, by using Three.js and React.js newest features.',
+        href: 'https://ding-gray.vercel.app/',
         texture: '/textures/project/project2.mp4',
-        logo: '/assets/project-logo2.png',
+        logo: '/assets/project-logo2.svg',
         logoStyle: {
             backgroundColor: '#13202F',
             border: '0.2px solid #17293E',
@@ -116,94 +114,23 @@ export const myProjects = [
             },
             {
                 id: 2,
-                name: 'TailwindCSS',
-                path: 'assets/tailwindcss.png',
+                name: 'Vite',
+                path: '/vite.svg',
             },
             {
                 id: 3,
-                name: 'TypeScript',
-                path: '/assets/typescript.png',
+                name: 'Three.js',
+                path: '/assets/Threejs.svg',
             },
             {
                 id: 4,
                 name: 'Framer Motion',
                 path: '/assets/framer.png',
             },
-        ],
-    },
-    {
-        title: 'CarePulse - Health Management System',
-        desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
-        subdesc:
-            'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
-        href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
-        texture: '/textures/project/project3.mp4',
-        logo: '/assets/project-logo3.png',
-        logoStyle: {
-            backgroundColor: '#60f5a1',
-            background:
-                'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
-            border: '0.2px solid rgba(208, 213, 221, 1)',
-            boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
-        },
-        spotlight: '/assets/spotlight3.png',
-        tags: [
             {
-                id: 1,
-                name: 'React.js',
-                path: '/assets/react.svg',
-            },
-            {
-                id: 2,
+                id: 5,
                 name: 'TailwindCSS',
-                path: 'assets/tailwindcss.png',
-            },
-            {
-                id: 3,
-                name: 'TypeScript',
-                path: '/assets/typescript.png',
-            },
-            {
-                id: 4,
-                name: 'Framer Motion',
-                path: '/assets/framer.png',
-            },
-        ],
-    },
-    {
-        title: 'Horizon - Online Banking Platform',
-        desc: 'Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.',
-        subdesc:
-            'Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.',
-        href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
-        texture: '/textures/project/project4.mp4',
-        logo: '/assets/project-logo4.png',
-        logoStyle: {
-            backgroundColor: '#0E1F38',
-            border: '0.2px solid #0E2D58',
-            boxShadow: '0px 0px 60px 0px #2F67B64D',
-        },
-        spotlight: '/assets/spotlight4.png',
-        tags: [
-            {
-                id: 1,
-                name: 'React.js',
-                path: '/assets/react.svg',
-            },
-            {
-                id: 2,
-                name: 'TailwindCSS',
-                path: 'assets/tailwindcss.png',
-            },
-            {
-                id: 3,
-                name: 'TypeScript',
-                path: '/assets/typescript.png',
-            },
-            {
-                id: 4,
-                name: 'Framer Motion',
-                path: '/assets/framer.png',
+                path: '/assets/tailwindcss.png',
             },
         ],
     },
