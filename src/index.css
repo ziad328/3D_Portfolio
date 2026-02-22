@@ -163,8 +163,50 @@ body {
   @apply w-full bg-black-300 px-5 py-2 min-h-14 rounded-lg placeholder:text-white-500 text-lg text-white-800 shadow-black-200 shadow-2xl focus:outline-none;
 }
 
-@utility field-btn {
-  @apply bg-black-500 px-5 py-2 min-h-12 rounded-lg shadow-black-200 shadow-2xl flex justify-center items-center text-lg text-white gap-3;
+/* field-btn is a regular class (not @utility) so pseudo-selectors work correctly */
+.field-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  min-height: 3rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  background: linear-gradient(135deg, #3d3d3d 0%, #606070 50%, #3d3d3d 100%);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+  transition: background-position 0.4s ease, box-shadow 0.3s ease, transform 0.15s ease, opacity 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.field-btn:hover {
+  background-position: 100% 50%;
+  box-shadow: 0 8px 28px rgba(130, 130, 180, 0.4), 0 2px 8px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.field-btn:active {
+  transform: scale(0.96) translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.field-btn:focus-visible {
+  outline: 2px solid #a0a0bf;
+  outline-offset: 3px;
+}
+
+.field-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 @utility field-btn_arrow {
@@ -188,6 +230,11 @@ body {
 
 
 /* ─── Keyframes ───────────────────────────────────────────────────────────── */
+@keyframes btn-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
 @keyframes wave-animation {
   0% {
     transform: rotate(0deg);
