@@ -1,6 +1,7 @@
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import { Suspense, useState } from 'react';
+import { Suspense, useState, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls } from '@react-three/drei';
 
@@ -8,12 +9,15 @@ import { myProjects } from '../constants/index.js';
 import CanvasLoader from '../components/CanvasLoader.tsx';
 import DemoComputer from '../components/DemoComputer.tsx';
 
+gsap.registerPlugin(ScrollTrigger);
+
 type NavigationDirection = 'previous' | 'next';
 
 const projectCount = myProjects.length;
 
 const Projects = () => {
     const [selectedProjectIndex, setSelectedProjectIndex] = useState<number>(0);
+    const sectionRef = useRef<HTMLElement>(null);
 
     const handleNavigation = (direction: NavigationDirection): void => {
         setSelectedProjectIndex((prevIndex) => {
@@ -25,6 +29,43 @@ const Projects = () => {
         });
     };
 
+    // Scroll entrance animation for heading + columns
+    useGSAP(() => {
+        gsap.fromTo(
+            '.projects-title',
+            { y: 40, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.7,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: 'top 65%',
+                    toggleActions: 'play none none none',
+                },
+            },
+        );
+
+        gsap.fromTo(
+            '.projects-col',
+            { y: 60, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: 'power3.out',
+                stagger: 0.18,
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: 'top 58%',
+                    toggleActions: 'play none none none',
+                },
+            },
+        );
+    }, { scope: sectionRef });
+
+    // Text swap animation
     useGSAP(() => {
         gsap.fromTo(`.animatedText`, { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.2, ease: 'power2.inOut' });
     }, [selectedProjectIndex]);
@@ -32,11 +73,11 @@ const Projects = () => {
     const currentProject = myProjects[selectedProjectIndex];
 
     return (
-        <section className="c-space my-20">
-            <p className="head-text">My Selected Work</p>
+        <section ref={sectionRef} className="c-space my-20">
+            <p className="head-text projects-title">My Selected Work</p>
 
             <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
-                <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
+                <div className="projects-col flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
                     <div className="absolute top-0 right-0">
                         <img src={currentProject.spotlight} alt="spotlight" className="w-full h-96 object-cover rounded-xl" />
                     </div>
@@ -47,7 +88,6 @@ const Projects = () => {
 
                     <div className="flex flex-col gap-5 text-white-600 my-5">
                         <p className="text-white text-2xl font-semibold animatedText">{currentProject.title}</p>
-
                         <p className="animatedText">{currentProject.desc}</p>
                         <p className="animatedText">{currentProject.subdesc}</p>
                     </div>
@@ -82,7 +122,7 @@ const Projects = () => {
                     </div>
                 </div>
 
-                <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
+                <div className="projects-col border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
                     <Canvas>
                         <ambientLight intensity={Math.PI} />
                         <directionalLight position={[10, 10, 5]} />

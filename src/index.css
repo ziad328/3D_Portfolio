@@ -184,7 +184,7 @@ body {
   background-position: 0% 50%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
   transition: background-position 0.4s ease, box-shadow 0.3s ease, transform 0.15s ease, opacity 0.3s ease;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .field-btn:hover {
@@ -231,8 +231,13 @@ body {
 
 /* ─── Keyframes ───────────────────────────────────────────────────────────── */
 @keyframes btn-spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes wave-animation {
@@ -267,4 +272,73 @@ body {
   100% {
     transform: rotate(0deg);
   }
+}
+
+/* ─── Bento grid – globe floating bob ─────────────────────────────────────── */
+@keyframes float-updown {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.globe-float {
+  animation: float-updown 4s ease-in-out infinite;
+}
+
+/* ─── Bento grid – card shimmer sweep on hover ────────────────────────────── */
+.bento-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.06) 50%,
+      transparent 70%);
+  background-size: 200% 100%;
+  background-position: -100% 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.bento-shimmer:hover::after {
+  opacity: 1;
+  background-position: 200% 0;
+  transition:
+    background-position 0.7s ease,
+    opacity 0.3s ease;
+}
+
+/* ─── Bento grid – copy icon hover scale ─────────────────────────────────── */
+.copy-icon-animate {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.copy-container:hover .copy-icon-animate {
+  transform: scale(1.25) rotate(-5deg);
+  filter: brightness(1.3);
+}
+
+/* ─── Footer social icon – hover lift ────────────────────────────────────── */
+.social-icon-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-icon-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.08);
 }
