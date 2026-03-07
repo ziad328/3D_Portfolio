@@ -179,7 +179,7 @@ body {
   cursor: pointer;
   user-select: none;
   overflow: hidden;
-  background: linear-gradient(135deg, #3d3d3d 0%, #606070 50%, #3d3d3d 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 50%, #1a1a2e 100%);
   background-size: 200% 200%;
   background-position: 0% 50%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
@@ -189,7 +189,7 @@ body {
 
 .field-btn:hover {
   background-position: 100% 50%;
-  box-shadow: 0 8px 28px rgba(130, 130, 180, 0.4), 0 2px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 28px rgba(15, 52, 96, 0.6), 0 2px 8px rgba(0, 0, 0, 0.4);
   transform: translateY(-2px);
 }
 

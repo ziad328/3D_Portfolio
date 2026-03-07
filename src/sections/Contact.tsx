@@ -87,10 +87,10 @@ const Contact = () => {
             <div className="relative min-h-screen flex items-center justify-center flex-col w-full max-w-3xl mx-auto">
 
                 {/* Terminal Window */}
-                <div className="contact-terminal w-full bg-[#0E0E10] rounded-xl border border-gray-800 shadow-2xl overflow-hidden relative z-10">
+                <div className="contact-terminal w-full bg-black-200 rounded-xl border border-black-300 shadow-2xl overflow-hidden relative z-10">
 
                     {/* Terminal Header */}
-                    <div className="flex items-center px-4 py-3 bg-[#1C1C1E] border-b border-gray-800">
+                    <div className="flex items-center px-4 py-3 bg-black-600 border-b border-black-300">
                         <div className="flex space-x-2 group">
                             <div className="w-3 h-3 bg-[#FF5F56] rounded-full flex items-center justify-center cursor-pointer">
                                 <svg className="w-1.5 h-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-150" viewBox="0 0 10 10" fill="#7a0000">
