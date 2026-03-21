@@ -119,19 +119,19 @@ const Contact = () => {
                         </p>
 
                         <form onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-7">
-                            <label className="space-y-3">
+                            <label htmlFor="name" className="space-y-3">
                                 <span className="field-label">Full Name</span>
-                                <input type="text" name="name" value={form.name} onChange={handleChange} required className="field-input" placeholder="ex., John Doe" />
+                                <input id="name" type="text" name="name" value={form.name} onChange={handleChange} required className="field-input" placeholder="ex., John Doe" />
                             </label>
 
-                            <label className="space-y-3">
+                            <label htmlFor="email" className="space-y-3">
                                 <span className="field-label">Email address</span>
-                                <input type="email" name="email" value={form.email} onChange={handleChange} required className="field-input" placeholder="ex., johndoe@gmail.com" />
+                                <input id="email" type="email" name="email" value={form.email} onChange={handleChange} required className="field-input" placeholder="ex., johndoe@gmail.com" />
                             </label>
 
-                            <label className="space-y-3">
+                            <label htmlFor="message" className="space-y-3">
                                 <span className="field-label">Your message</span>
-                                <textarea name="message" value={form.message} onChange={handleChange} required rows={5} className="field-input" placeholder="Share your thoughts or inquiries..." />
+                                <textarea id="message" name="message" value={form.message} onChange={handleChange} required rows={5} className="field-input" placeholder="Share your thoughts or inquiries..." />
                             </label>
 
                             <button className="field-btn" type="submit" disabled={loading}>

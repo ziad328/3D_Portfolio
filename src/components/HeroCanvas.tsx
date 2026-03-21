@@ -29,6 +29,7 @@ const HeroCanvas = ({ sizes, isMobile }: HeroCanvasProps) => {
             className="w-full h-full"
             dpr={dpr}
             gl={{ preserveDrawingBuffer: true, antialias: !isMobile }} // disable AA on mobile
+            aria-label="3D Interactive Hero Scene"
         >
             <Suspense fallback={<CanvasLoader />}>
                 {/* To hide controller */}
