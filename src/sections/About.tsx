@@ -90,9 +90,7 @@ const About = () => {
             <div>
               <p className="grid-headtext">I&apos;m very flexible with time zone communications &amp; locations</p>
               <p className="grid-subtext">I&apos;m based in Cairo, Egypt and open to remote work worldwide.</p>
-              <a href="#contact" className="w-fit">
-                <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
-              </a>
+              <Button name="Contact Me" isBeam containerClass="w-full mt-10" href="#contact" />
             </div>
           </div>
         </div>
@@ -121,7 +119,7 @@ const About = () => {
             />
             <div className="space-y-2">
               <p className="grid-subtext text-center">Contact me</p>
-              <div className="copy-container" onClick={handleCopy}>
+              <div className="copy-container" onClick={handleCopy} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && handleCopy()} aria-label="Copy email address">
                 <img
                   src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'}
                   alt="copy"
